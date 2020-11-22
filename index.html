@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="LunchApp">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lunch Checker</title>
+    <script src="angular.min (1).js"></script>
+    <script src="app.js"></script>
+    <style>
+      .message { font-size: 1.3em; font-weight: bold; }
+    </style>
+  </head>
+  <body>
+    <div class="container" ng-controller="MenuController">
+      <h1>Lunch Checker</h1>
+         <div class="form-group">
+             <input id="lunch-menu" type="text"
+             placeholder="list comma separated dishes you usually have for lunch"
+             ng-model="list"
+             class="form-control">
+         </div>
+         <div class="form-group">
+             <button class="btn btn-default" ng-model="list" ng-click="checkLunch()" >Check If Too Much</button>
+         </div>
+         <div class="form-group message">
+           {{message()}}<br>
+           <p>We don't consider ', ,'</p>
+         </div>
+     </div>
+  </body>
+</html>
